@@ -56,11 +56,12 @@
     #pragma warning(disable: 4355) // this used in base member initializer list
 #endif // VC++
 
-#ifndef __WXMSW__
+#ifdef __WXMSW__
+    #define VERSION "0.02"
+#else // !MSW
     #include "../icons/wxZoom.xpm"
+    #include "config.h"     // for VERSION
 #endif
-
-#include "config.h"     // for VERSION
 
 // ----------------------------------------------------------------------------
 // constants
