@@ -1,0 +1,5 @@
+#include <wx/msw/wx.rc>
+
+// the icon used in explorer is the first in _alphabetical_ order!
+aaaaaa		ICON	"icons/wxZoom.ico"
+wxZoom		ICON	"icons/wxZoom.ico"

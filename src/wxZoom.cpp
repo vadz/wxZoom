@@ -40,13 +40,18 @@
     #include "wx/frame.h"
 
     #include "wx/menu.h"
-    #include "wx/image.h"
 
     #include "wx/dcscreen.h"
     #include "wx/dcmemory.h"
 #endif
 
+#include "wx/image.h"
+
 #include "wx/textdlg.h"
+
+#ifdef __VISUALC__
+#pragma warning(disable: 4355) // this used in base member initializer list
+#endif // VC++
 
 // ----------------------------------------------------------------------------
 // constants
@@ -208,6 +213,8 @@ ZoomFrame::ZoomFrame(const wxSize& size, const wxPoint& ptOld)
     SetMenuBar(menuBar);
 
     CreateStatusBar(3);
+
+    SetIcon(wxICON(wxZoom));
 }
 
 void ZoomFrame::DrawMarker(wxDC& dc, const wxPoint& pt)

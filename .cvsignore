@@ -1,4 +1,8 @@
 *.sw?
 .deps
 Debug
+DebugDll
 Release
+ReleaseDll
+wxZoom.ncb
+wxZoom.opt
