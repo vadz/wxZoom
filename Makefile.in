@@ -67,7 +67,8 @@ WX_LIBS = @WX_LIBS@
 
 AUTOMAKE_OPTIONS = foreign
 
-EXTRA_DIST = README.txt wxcard.dsp wxcard.dsw wxcard.rc
+EXTRA_DIST = README.txt wxZoom.dsp wxZoom.dsw wxZoom.rc              icons/wxZoom.ico icons/wxZoom.xpm
+
 SUBDIRS = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
@@ -259,6 +260,7 @@ distdir: $(DISTFILES)
 	distdir=`cd $(distdir) && pwd`; \
 	cd $(top_srcdir) \
 	  && $(AUTOMAKE) --include-deps --build-dir=$$here --srcdir-name=$(top_srcdir) --output-dir=$$top_distdir --foreign Makefile
+	$(mkinstalldirs) $(distdir)/icons
 	@for file in $(DISTFILES); do \
 	  d=$(srcdir); \
 	  if test -d $$d/$$file; then \
