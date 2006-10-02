@@ -24,13 +24,14 @@ CFG=wxZoom - Win32 Debug
 !MESSAGE 
 
 # Begin Project
+# PROP AllowPerConfigDependencies 0
 # PROP Scc_ProjName ""
 # PROP Scc_LocalPath ""
 CPP=cl.exe
 MTL=midl.exe
 RSC=rc.exe
 
-!ELSEIF "$(CFG)" == "wxZoom - Win32 Release DLL"
+!IF  "$(CFG)" == "wxZoom - Win32 Release DLL"
 
 # PROP BASE Use_MFC 0
 # PROP BASE Use_Debug_Libraries 0
@@ -44,19 +45,19 @@ RSC=rc.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W4 /O2 /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D WINVER=0x400 /YX /FD /c
-# ADD CPP /nologo /W4 /O2 /I "$(WXWIN)\include" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D WINVER=0x400 /D WIN32 /D WINVER=0x400 /D wxUSE_GUI=1 /YX /FD /c /MD  /D WXUSINGDLL  /I$(WXWIN)\lib\mswdll 
-# ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /o NUL /win32
-# ADD MTL /nologo /D "NDEBUG" /mktyplib203 /o NUL /win32
-# ADD BASE RSC /l 0x409 /d "NDEBUG" /I "$(WXWIN)\include"
-# ADD RSC /l 0x409 /d "NDEBUG" /I "$(WXWIN)\include"
+# ADD CPP /nologo /MD /W4 /O2 /I "$(WXWIN)\lib\mswdll" /I "$(WXWIN)\include\msvc" /I "$(WXWIN)\include" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D WINVER=0x400 /D wxUSE_GUI=1 /D "WXUSINGDLL" /YX /FD /c
+# ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
+# ADD BASE RSC /l 0x409 /i "$(WXWIN)\include" /d "NDEBUG"
+# ADD RSC /l 0x409 /i "$(WXWIN)\include" /d "NDEBUG"
 BSC32=bscmake.exe
 # ADD BASE BSC32 /nologo
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib rpcrt4.lib wsock32.lib /nologo /subsystem:windows /machine:I386
-# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib rpcrt4.lib wsock32.lib /nologo /subsystem:windows /machine:I386 $(WXWIN)\lib\wxmsw233.lib
+# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comctl32.lib rpcrt4.lib wsock32.lib /nologo /subsystem:windows /machine:I386 /libpath:"$(WXWIN)\lib\vc_dll"
 
-!ELSEIF "$(CFG)" == "wxZoom - Win32 Debug DLL"
+!ELSEIF  "$(CFG)" == "wxZoom - Win32 Debug DLL"
 
 # PROP BASE Use_MFC 0
 # PROP BASE Use_Debug_Libraries 1
@@ -70,19 +71,19 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W4 /Zi /Od /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D WINVER=0x400 /YX /FD /c
-# ADD CPP /nologo /W4 /Zi /Od /I "$(WXWIN)\include" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D WINVER=0x400 /D WIN32 /D WINVER=0x400 /D wxUSE_GUI=1 /YX /FD /c /MDd /D "__WXDEBUG__" /D "WXDEBUG=1"  /D WXUSINGDLL  /I$(WXWIN)\lib\mswdlld 
-# ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o NUL /win32
-# ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o NUL /win32
-# ADD BASE RSC /l 0x409 /d "_DEBUG" /I "$(WXWIN)\include"
-# ADD RSC /l 0x409 /d "_DEBUG" /I "$(WXWIN)\include"
+# ADD CPP /nologo /MDd /W4 /Zi /Od /I "$(WXWIN)\lib\mswdlld" /I "$(WXWIN)\include\msvc" /I "$(WXWIN)\include" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D WINVER=0x400 /D wxUSE_GUI=1 /D "__WXDEBUG__" /D WXDEBUG=1 /D "WXUSINGDLL" /YX /FD /c
+# ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+# ADD BASE RSC /l 0x409 /i "$(WXWIN)\include" /d "_DEBUG"
+# ADD RSC /l 0x409 /i "$(WXWIN)\include" /d "_DEBUG"
 BSC32=bscmake.exe
 # ADD BASE BSC32 /nologo
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib rpcrt4.lib wsock32.lib /nologo /subsystem:windows /debug /machine:I386 /pdbtype:sept
-# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib rpcrt4.lib wsock32.lib /nologo /subsystem:windows /debug /machine:I386 /pdbtype:sept $(WXWIN)\lib\wxmsw233d.lib
+# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comctl32.lib rpcrt4.lib wsock32.lib /nologo /subsystem:windows /debug /machine:I386 /pdbtype:sept /libpath:"$(WXWIN)\lib\vc_dll"
 
-!ELSEIF "$(CFG)" == "wxZoom - Win32 Release"
+!ELSEIF  "$(CFG)" == "wxZoom - Win32 Release"
 
 # PROP BASE Use_MFC 0
 # PROP BASE Use_Debug_Libraries 0
@@ -96,19 +97,19 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W4 /O2 /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D WINVER=0x400 /YX /FD /c
-# ADD CPP /nologo /W4 /O2 /I "$(WXWIN)\include" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D WINVER=0x400 /D WIN32 /D WINVER=0x400 /D wxUSE_GUI=1 /YX /FD /c /MD  /I$(WXWIN)\lib\msw 
-# ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /o NUL /win32
-# ADD MTL /nologo /D "NDEBUG" /mktyplib203 /o NUL /win32
-# ADD BASE RSC /l 0x409 /d "NDEBUG" /I "$(WXWIN)\include"
-# ADD RSC /l 0x409 /d "NDEBUG" /I "$(WXWIN)\include"
+# ADD CPP /nologo /MD /W4 /O2 /I "$(WXWIN)\lib\msw" /I "$(WXWIN)\include\msvc" /I "$(WXWIN)\include" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D WINVER=0x400 /D wxUSE_GUI=1 /YX /FD /c
+# ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
+# ADD BASE RSC /l 0x409 /i "$(WXWIN)\include" /d "NDEBUG"
+# ADD RSC /l 0x409 /i "$(WXWIN)\include" /d "NDEBUG"
 BSC32=bscmake.exe
 # ADD BASE BSC32 /nologo
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib rpcrt4.lib wsock32.lib /nologo /subsystem:windows /machine:I386
-# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib rpcrt4.lib wsock32.lib /nologo /subsystem:windows /machine:I386 $(WXWIN)\lib\zlib.lib $(WXWIN)\lib\regex.lib $(WXWIN)\lib\png.lib $(WXWIN)\lib\jpeg.lib $(WXWIN)\lib\tiff.lib $(WXWIN)\lib\wxmsw.lib
+# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comctl32.lib rpcrt4.lib wsock32.lib /nologo /subsystem:windows /machine:I386 /libpath:"$(WXWIN)\lib\vc_lib"
 
-!ELSEIF "$(CFG)" == "wxZoom - Win32 Debug"
+!ELSEIF  "$(CFG)" == "wxZoom - Win32 Debug"
 
 # PROP BASE Use_MFC 0
 # PROP BASE Use_Debug_Libraries 1
@@ -122,17 +123,17 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W4 /Zi /Od /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D WINVER=0x400 /YX /FD /c
-# ADD CPP /nologo /W4 /Zi /Od /I "$(WXWIN)\include" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D WINVER=0x400 /D WIN32 /D WINVER=0x400 /D wxUSE_GUI=1 /YX /FD /c /MDd /D "__WXDEBUG__" /D "WXDEBUG=1"  /I$(WXWIN)\lib\mswd 
-# ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o NUL /win32
-# ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o NUL /win32
-# ADD BASE RSC /l 0x409 /d "_DEBUG" /I "$(WXWIN)\include"
-# ADD RSC /l 0x409 /d "_DEBUG" /I "$(WXWIN)\include"
+# ADD CPP /nologo /MDd /W4 /Zi /Od /I "$(WXWIN)\lib\mswd" /I "$(WXWIN)\include\msvc" /I "$(WXWIN)\include" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D WINVER=0x400 /D wxUSE_GUI=1 /D "__WXDEBUG__" /D WXDEBUG=1 /YX /FD /c
+# ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+# ADD BASE RSC /l 0x409 /i "$(WXWIN)\include" /d "_DEBUG"
+# ADD RSC /l 0x409 /i "$(WXWIN)\include" /d "_DEBUG"
 BSC32=bscmake.exe
 # ADD BASE BSC32 /nologo
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib rpcrt4.lib wsock32.lib /nologo /subsystem:windows /debug /machine:I386 /pdbtype:sept
-# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib rpcrt4.lib wsock32.lib /nologo /subsystem:windows /debug /machine:I386 /pdbtype:sept $(WXWIN)\lib\zlibd.lib $(WXWIN)\lib\regexd.lib $(WXWIN)\lib\pngd.lib $(WXWIN)\lib\jpegd.lib $(WXWIN)\lib\tiffd.lib $(WXWIN)\lib\wxmswd.lib
+# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comctl32.lib rpcrt4.lib wsock32.lib /nologo /subsystem:windows /debug /machine:I386 /pdbtype:sept /libpath:"$(WXWIN)\lib\vc_lib"
 
 !ENDIF 
 
