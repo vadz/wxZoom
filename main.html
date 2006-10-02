@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+	<title>wxZoom Home</title>
+	<meta name="Author" content="Vadim Zeitlin">
+</head>
+
+<center><h1>wxZoom: a screen magnification utility</h1></center>
+
+<h2>What it is?</h2>
+
+<p>I have decided to make publicly available a small program which I have
+written because I needed it myself and found the standard <tt>xmag</tt>
+utility to be thoroughly insufficient for my needs.
+
+<p>The extra features compared to <tt>xmag</tt> include more convenient choice
+of the screen part to show, possibility to resize the window (and the part
+being magnified), increase and decrease zoom factor in one key press and the
+possibility to view the grid (for easier pixel counting) and the colour of the
+pixel under mouse in RGB and, most importantly for me, autorefresh of the view
+which allows to observe changing objects on screen.
+
+<p>If I can find some time I will try to also add the following in the next
+version:
+<ul>
+	<li>saving of the magnified image in standard formats (PNG/JPEG/GIF)
+	<li>make it much more efficient: currently it's awfully dumb and so
+	    there is a lot of unnecessary flicker
+	<li>UI improvements (too many to list here).
+</ul>
+
+<p>If you have anything else in mind don't hesitate to contact me.
+
+<h2>Where to get it?</h2>
+
+<p>Download the sources or binaries (Win32 or Linux RPM only for the latter)
+<a href="http://sourceforge.net/project/showfiles.php?group_id=15266&release_id=17344">
+here</a>.
+
+<p>If you download the Windows binary, you will need precompiled
+<a href="www.wxwindows.org">wxWindows</a> DLL for Win32 which can be found in
+the same location. Just unzip both files into any directory and run the
+executable.
+
+<p>For Linux, you may get the RPM containing wxWindows from
+<a href="http://www-fs.informatik.uni-freiburg.de/~wxxt/download.html">wxGTK</a>
+home site (you only need runtime RPM for wxZoom.rpm but development package if
+you want to compile it yourself).
+
+<p>For other systems you don't have any choice but to compile wxZoom yourself.
+Luckily, this is very simple: it just requires wxWindows development package to
+be installed, but after this building it is a matter of typing
+<pre>
+$ ./configure
+$ make
+$ make install
+</pre>
+
+<h2>How to use it?</h2>
+
+<p>After launching the program you can press the left mouse button in the window
+and drag it to select the screen area to view. You can increase/decrease the
+zoom level with Ctrl-I/Ctrl-O (also from the menu) and you can also refresh
+the window either manually (F5) or automatically (Ctrl-A) using a configurable
+interval.
+
+<p>Miscellaneous other features:
+
+<ul>
+   <li>you can toggle the grid lines display with Ctrl-G.
+   <li>when the mouse is inside the window, the second pane of the status bar
+       displays the colour of the pixel under the pointer in hex RGB format.
+   <li>you can open new program windows with Ctrl-N
+</ul>
+
+<body>
+<hr>
+Page was last updated at Oct 2, 2006.
+<br>
+<p>
+Please contact <a HREF="mailto:vadim@wxwindows.org">me</a> with any
+comments/suggestions.
+</body>
+</html>
