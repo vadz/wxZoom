@@ -50,7 +50,7 @@
 
 #include <wx/image.h>
 
-#include <wx/textdlg.h>
+#include <wx/numdlg.h>
 
 #ifdef __VISUALC__
     #pragma warning(disable: 4355) // this used in base member initializer list
@@ -90,7 +90,7 @@ enum
 // app class
 // ----------------------------------------------------------------------------
 
-WX_DEFINE_ARRAY(wxFrame *, ArrayFrames);
+WX_DEFINE_ARRAY_PTR(wxFrame *, ArrayFrames);
 
 class ZoomApp : public wxApp
 {
@@ -399,7 +399,7 @@ void ZoomFrame::OnMouseMove(wxMouseEvent& event)
     }
 }
 
-void ZoomFrame::OnMouseUp(wxMouseEvent& event)
+void ZoomFrame::OnMouseUp(wxMouseEvent& WXUNUSED(event))
 {
     EndDragging();
 
@@ -461,12 +461,12 @@ void ZoomFrame::OnKeyDown(wxKeyEvent& event)
     }
 }
 
-void ZoomFrame::OnSize(wxSizeEvent& event)
+void ZoomFrame::OnSize(wxSizeEvent& WXUNUSED(event))
 {
     RecreateBitmap();
 }
 
-void ZoomFrame::OnPaint(wxPaintEvent& event)
+void ZoomFrame::OnPaint(wxPaintEvent& WXUNUSED(event))
 {
     const wxSize& size = GetClientSize();
 
@@ -479,9 +479,9 @@ void ZoomFrame::OnPaint(wxPaintEvent& event)
     }
     else
     {
-        wxImage img = m_bmp;
+        wxImage img = m_bmp.ConvertToImage();
         ZoomImage(img);
-        bmp = img.ConvertToBitmap();
+        bmp = wxBitmap(img);
     }
 
     dc.DrawBitmap(bmp, 0, 0);
@@ -538,7 +538,7 @@ void ZoomFrame::OnCommand(wxCommandEvent& event)
                     break;
                 }
 
-                wxImage img = m_bmp;
+                wxImage img = m_bmp.ConvertToImage();
                 if ( zoomed )
                 {
                     ZoomImage(img);
@@ -671,7 +671,7 @@ void ZoomFrame::OnUpdateZoomOut(wxUpdateUIEvent& event)
     event.Enable( m_zoomFactor > 1 );
 }
 
-void ZoomFrame::OnTimer(wxTimerEvent& event)
+void ZoomFrame::OnTimer(wxTimerEvent& WXUNUSED(event))
 {
     RefreshBitmap();
 }
