@@ -39,11 +39,11 @@ configure).
 
 b) Building under Win32
 
-   Currently you can only build it using VC++ 6.0 or the cygwin tools. For the
+   Currently you can only build it using VC++ or the cygwin tools. For the
 latter, please refer to the Unix instructions above.
 
-   To build the program with VC++ 6.0, just open the provided workspace file
-and choose build.
+   To build the program with VC++ 6.0 or 7.1, just open the provided workspace
+file (wxZoom.dsw for the former and wxZoom.sln for the latter) and choose build.
 
 2. Using the program
 --------------------
