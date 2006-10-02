@@ -1,8 +1,12 @@
 *.sw?
 .deps
+debug
 Debug
 DebugDll
+release
 Release
 ReleaseDll
+VTune
 wxZoom.ncb
 wxZoom.opt
+wxZoom.suo
