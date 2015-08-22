@@ -13,7 +13,7 @@ dnl ---------------------------------------------------------------------------
 dnl generic init
 AC_INIT(src/wxZoom.cpp)
 AM_CONFIG_HEADER(config.h:config.h.in)
-AM_INIT_AUTOMAKE(wxZoom, 0.02)
+AM_INIT_AUTOMAKE(wxZoom, 0.03)
 
 dnl check for programs we use
 AC_PROG_CXX

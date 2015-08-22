@@ -58,7 +58,7 @@
 #endif // VC++
 
 #ifdef __WXMSW__
-    #define VERSION "0.02"
+    #define VERSION "0.03"
 #else // !MSW
     #include "../icons/wxZoom.xpm"
     #include "config.h"     // for VERSION
