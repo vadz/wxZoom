@@ -13,6 +13,7 @@ dnl ---------------------------------------------------------------------------
 dnl generic init
 AC_INIT([wxZoom], [0.03])
 AC_CONFIG_SRCDIR([src/wxZoom.cpp])
+AC_CONFIG_MACRO_DIRS([m4])
 AM_INIT_AUTOMAKE
 AM_SILENT_RULES([yes])
 
@@ -20,7 +21,8 @@ dnl check for programs we use
 AC_PROG_CXX
 
 dnl check for wx-config
-WX_PATH_WXCONFIG(2.1.1, WXCONFIG=1)
+AM_OPTIONS_WXCONFIG
+AM_PATH_WXCONFIG(2.1.1, WXCONFIG=1)
 if test "$WXCONFIG" != 1; then
     AC_MSG_ERROR([
             Please check that wx-config is in path, the directory
@@ -30,8 +32,10 @@ if test "$WXCONFIG" != 1; then
     ])
 fi
 
-CXXFLAGS="${CXXFLAGS} ${WX_CFLAGS}"
-LDFLAGS="${LDFLAGS} ${WX_LIBS}"
+CPPFLAGS="$CPPFLAGS $WX_CPPFLAGS"
+CXXFLAGS="$CXXFLAGS $WX_CXXFLAGS_ONLY"
+CFLAGS="$CFLAGS $WX_CFLAGS_ONLY"
+LIBS="$LIBS $WX_LIBS"
 
 dnl define outputs
 AM_CONFIG_HEADER(config.h:config.h.in)
