@@ -34,6 +34,7 @@
 #ifndef WX_PRECOMP
     #include <wx/intl.h>
     #include <wx/dynarray.h>
+    #include <wx/filename.h>
     #include <wx/timer.h>
 
     #include <wx/app.h>
@@ -545,7 +546,7 @@ void ZoomFrame::OnCommand(wxCommandEvent& event)
                 }
 
                 wxString ext;
-                wxSplitPath(filename, NULL, NULL, &ext);
+                wxFileName::SplitPath(filename, NULL, NULL, &ext);
                 ext.MakeLower();
 
                 wxBitmapType type;
