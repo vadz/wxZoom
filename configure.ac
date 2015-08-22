@@ -6,7 +6,6 @@ dnl Name:       configure.ac
 dnl Purpose:    autoconf source for wxZoom makefile generation
 dnl Author:     Vadim Zeitlin
 dnl Created:    01.12.00
-dnl RCS-ID:     $Id$
 dnl Copyright:  (c) 2000 Vadim Zeitlin <vadim@wxwindows.org>
 dnl Licence:    wxWindows licence
 dnl ---------------------------------------------------------------------------
