@@ -11,9 +11,9 @@ dnl Licence:    wxWindows licence
 dnl ---------------------------------------------------------------------------
 
 dnl generic init
-AC_INIT(src/wxZoom.cpp)
-AM_CONFIG_HEADER(config.h:config.h.in)
-AM_INIT_AUTOMAKE(wxZoom, 0.03)
+AC_INIT([wxZoom], [0.03])
+AC_CONFIG_SRCDIR([src/wxZoom.cpp])
+AM_INIT_AUTOMAKE
 
 dnl check for programs we use
 AC_PROG_CXX
@@ -32,7 +32,8 @@ fi
 CXXFLAGS="${CXXFLAGS} ${WX_CFLAGS}"
 LDFLAGS="${LDFLAGS} ${WX_LIBS}"
 
-dnl that's all, folks
+dnl define outputs
+AM_CONFIG_HEADER(config.h:config.h.in)
 AC_OUTPUT([
             Makefile
             src/Makefile
