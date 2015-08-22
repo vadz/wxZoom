@@ -2,7 +2,7 @@ dnl Process this file with autoconf to produce a configure script.
 AC_REVISION($Id$)dnl
 
 dnl ---------------------------------------------------------------------------
-dnl Name:       configure.in
+dnl Name:       configure.ac
 dnl Purpose:    autoconf source for wxZoom makefile generation
 dnl Author:     Vadim Zeitlin
 dnl Created:    01.12.00
