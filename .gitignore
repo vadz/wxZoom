@@ -6,3 +6,16 @@ install-sh
 missing
 mkinstalldirs
 stamp-h.in
+
+*.sw?
+.deps
+debug
+Debug
+DebugDll
+release
+Release
+ReleaseDll
+VTune
+wxZoom.ncb
+wxZoom.opt
+wxZoom.suo
