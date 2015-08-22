@@ -548,7 +548,7 @@ void ZoomFrame::OnCommand(wxCommandEvent& event)
                 wxSplitPath(filename, NULL, NULL, &ext);
                 ext.MakeLower();
 
-                int type;
+                wxBitmapType type;
                 if ( ext == _T("png") )
                     type = wxBITMAP_TYPE_PNG;
                 else if ( ext == _T("jpg") || ext == _T("jpeg") )
