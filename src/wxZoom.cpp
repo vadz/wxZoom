@@ -46,6 +46,7 @@
     #include <wx/msgdlg.h>
 
     #include <wx/dcscreen.h>
+    #include <wx/dcclient.h>
     #include <wx/dcmemory.h>
 #endif
 
