@@ -14,6 +14,7 @@ dnl generic init
 AC_INIT([wxZoom], [0.03])
 AC_CONFIG_SRCDIR([src/wxZoom.cpp])
 AM_INIT_AUTOMAKE
+AM_SILENT_RULES([yes])
 
 dnl check for programs we use
 AC_PROG_CXX
