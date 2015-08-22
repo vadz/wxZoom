@@ -26,12 +26,15 @@ a) Building under Unix
    You must have wxWindows development package (i.e. not only the libraries
 but the headers and wx-config) installed before doing this!
 
-   Simply execute the following programs in the directory where you untarred
+   Simply execute the following commands in the directory where you untarred
 the archive:
 
 	./configure
 	make
 	make install
+
+If you had obtained the sources by checking them out from the repository, you
+also need to run "./bootstrap" command before the ones above.
 
 You will usually need super user (root) priveleges to install it in the
 default location (/usr/local, may be changed by giving --prefix option to
